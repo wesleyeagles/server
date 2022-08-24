@@ -19,7 +19,12 @@ type IUserLogin = {
 
 export const resolvers = {
     Query: {
-        hello: () => "hi"
+        me: (_: any, __: any, {req}: any) => {
+            if (!req.session.userId) {
+                return null
+            }
+            return User.findOne({where: {id:req.session.userId}});
+        }
     },
 
     Mutation: {
