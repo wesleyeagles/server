@@ -39,14 +39,18 @@ const startServer = async () => {
    //
     
     server.start().then(() => {
-        server.applyMiddleware({ app, cors: false });
+        server.applyMiddleware({ app, cors: {
+            credentials: true,
+            origin: ["http://localhost:3000", "http://localhost:4000/graphql"]
+        }
+    });
     
         app.listen({ port: 4000}, () => {
         console.log(`Server started at https://localhost:4000${server.graphqlPath}`)
     })
     }) 
 
-    app.use(cors({ credentials: true, origin: "https://studio.apollographql.com" }));
+    app.use(cors({ credentials: true, origin: ["http://localhost:3000", "https://studio.apollographql.com"] }));
 
 }
 

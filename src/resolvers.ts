@@ -6,10 +6,11 @@ type IUserRegister = {
     name: string
     email:string
     password: string
+    confirmpassword: string
     state: string
     city: string
-    zip: string
     adress: string
+    number: string
 }
 
 type IUserLogin = {
@@ -28,16 +29,18 @@ export const resolvers = {
     },
 
     Mutation: {
-        register: async (_: any, {name, email, password, state, city, zip, adress}: IUserRegister) => {
+        register: async (_: any, {name, email, password, confirmpassword, state, city, adress, number}: IUserRegister) => {
            const hashedPassword = await hash(password)
+           const hashedConfirmPassword = await hash(confirmpassword)
            await User.create({
             name,
             email,
             password: hashedPassword,
+            confirmpassword: hashedConfirmPassword,
             state,
             city,
-            zip,
-            adress
+            adress,
+            number
            }).save();
 
            return true
@@ -53,10 +56,8 @@ export const resolvers = {
             if (!valid) {
                 return null
             }
-
-            console.log(req.session.userId)
+            
             req.session.userId = user.id
-            console.log(req.session.userId)
 
             return user;
         }

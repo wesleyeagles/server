@@ -15,6 +15,9 @@ export class User extends BaseEntity {
     @Column("text")
     password: string
 
+    @Column("text")
+    confirmpassword: string
+
     @Column()
     state: string
 
@@ -22,9 +25,9 @@ export class User extends BaseEntity {
     city: string
 
     @Column()
-    zip: string
+    adress: string
 
     @Column()
-    adress: string
+    number: string
 
 }
