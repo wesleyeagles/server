@@ -82,7 +82,7 @@ const startServer = async () => {
     app.set("trust proxy", 1);
     app.use(
     cors({
-      origin: ["https://acouguedigital.vercel.app", "https://server-omega-gilt.vercel.app"],
+      origin: ["https://acouguedigital.vercel.app", "https://server-omega-gilt.vercel.app/graphql"],
       credentials: true,
     })
   );
