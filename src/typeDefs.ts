@@ -10,6 +10,7 @@ export const typeDefs = gql`
         city: String!
         adress: String!
         number: String!
+        type: String!
     }
 
     type Query {
@@ -17,7 +18,9 @@ export const typeDefs = gql`
     }
 
     type Mutation {
-        register(name: String!, email: String!, password: String!, confirmpassword: String!, state: String!, city: String!, adress: String!, number: String!): Boolean!
+        register(name: String!, email: String!, password: String!, confirmpassword: String!, state: String!, city: String!, adress: String!, number: String!, type: String!): Boolean!
         login(email: String!, password: String!): User
+        logout: Boolean!
+        createSubscription: Boolean!
     }
 `;
