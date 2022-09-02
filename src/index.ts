@@ -31,7 +31,7 @@ const startServer = async () => {
 
   const monthPaymentLink = await stripe.paymentLinks.create({
     line_items: [{price: 'price_1Lc6ZBHbZtx4ETzjX5T0MWJt', quantity: 1}],
-    after_completion: {type: 'redirect', redirect: {url: 'http://192.168.0.19:3000/user/month/payment-sucess'}}
+    after_completion: {type: 'redirect', redirect: {url: 'https://acouguedigital.vercel.app/user/month/payment-sucess'}}
   });
 
   const trimensalPrice = await stripe.prices.create({
@@ -47,7 +47,7 @@ const startServer = async () => {
 
   const trimensalPaymentLink = await stripe.paymentLinks.create({
     line_items: [{price: 'price_1Lc6ZBHbZtx4ETzjWci3vC1d', quantity: 1}],
-    after_completion: {type: 'redirect', redirect: {url: 'http://192.168.0.19:3000/user/trimensal/payment-sucess'}}
+    after_completion: {type: 'redirect', redirect: {url: 'https://acouguedigital.vercel.app/user/trimensal/payment-sucess'}}
   });
 
   const anualPrice = await stripe.prices.create({
@@ -63,7 +63,7 @@ const startServer = async () => {
 
   const anualPaymentLink = await stripe.paymentLinks.create({
     line_items: [{price: 'price_1Lc6ZBHbZtx4ETzjqObDZ0rg', quantity: 1}],
-    after_completion: {type: 'redirect', redirect: {url: 'http://192.168.0.19:3000/user/anual/payment-sucess'}}
+    after_completion: {type: 'redirect', redirect: {url: 'https://acouguedigital.vercel.app/user/anual/payment-sucess'}}
   });
 
   console.log(monthPrice)
@@ -82,7 +82,7 @@ const startServer = async () => {
     app.set("trust proxy", 1);
     app.use(
     cors({
-      origin: ["http://192.168.0.19:3000", "https://studio.apollographql.com"],
+      origin: ["https://acouguedigital.vercel.app", "https://studio.apollographql.com"],
       credentials: true,
     })
   );
