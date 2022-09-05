@@ -77,6 +77,10 @@ const startServer = async () => {
 
     const app = express();
 
+    app.get("/", (__, res) => {
+      res.send("Express on Vercel");
+    });
+
     const RedisStore = connectRedis(session);
     const redis = new Redis(process.env.REDIS_URL);
     app.set("trust proxy", 1);
