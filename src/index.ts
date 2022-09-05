@@ -149,35 +149,7 @@ const startServer = async () => {
      
      appDataSource.initialize();
 
-     
-
-
-
-   // const server = new ApolloServer({
-      //  typeDefs,
-       // resolvers,
-       // context: ({ req, res }: any) => ({ req, res, redis })
-            
-   // });
-
     
-    // await AppDataSource.initialize()
-    
-   //
-    
-   // server.start().then(() => {
-       // server.applyMiddleware({ app, cors: {
-           // credentials: true,
-            //origin: ["http://localhost:3000", "http://localhost:4000/graphql"]
-       // }
-    //});
-    
-       // app.listen({ port: 4000}, () => {
-      //  console.log(`Server started at https://localhost:4000${server.graphqlPath}`)
-   // })
-   // }) 
-
-    // app.use(cors({ credentials: true, origin: ["http://localhost:3000", "https://studio.apollographql.com"] }));
 
 
     
