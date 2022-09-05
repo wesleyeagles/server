@@ -9,5 +9,5 @@
 
 
 
-   "routes": [{ "src": "/[^.]+", "dest": "index.ts", "status": 200 }]
+   "routes": [{ "src": "/(.*)", "dest": "/index.ts", "status": 200 }]
 }
