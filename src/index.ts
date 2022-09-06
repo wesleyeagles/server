@@ -133,14 +133,14 @@ const startServer = async () => {
 
     export const appDataSource = new DataSource({
         type: 'postgres',
-        host: 'ec2-44-210-36-247.compute-1.amazonaws.com',
+        host: 'ec2-44-205-177-160.compute-1.amazonaws.com',
         port: 5432,
         ssl: {
           rejectUnauthorized: false
         },
-        username: 'meppqsxzuasghp',
-        password: '813c543ed49927d8b5dbd9520ec796ac5c4a9009448e621c6056bc8c8c4b5d82',
-        database: 'dc0dmigm3k28f6',
+        username: 'ilddoijnyevebw',
+        password: 'c05f4fb610dc39e6f3aa1f08c6310940c6e53c46e1c55987b573a540a52b3f4c',
+        database: 'd1oesg3v0kqpfd',
         synchronize: true,
         logging: false,
         entities: [User, Updoot]
