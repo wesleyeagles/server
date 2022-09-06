@@ -82,7 +82,7 @@ const startServer = async () => {
     app.set("trust proxy", 1);
     app.use(
     cors({
-      origin: ["https://acouguedigital.vercel.app", "https://server-omega-gilt.vercel.app/graphql"],
+      origin: ["https://acouguedigital.vercel.app", "https://acougueserver.herokuapp.com/graphql"],
       credentials: true,
     })
   );
@@ -126,7 +126,7 @@ const startServer = async () => {
         cors: false,
       });
     
-      app.listen(4000, () => {
+      app.listen(process.env.PORT, () => {
         console.log("server started on localhost:4000");
       });
     };
